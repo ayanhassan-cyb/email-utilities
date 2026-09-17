@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <title>Email Pre-Send Inspector — Robust Email</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#inspectionForm">Skip to email input</a>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="wordmark" href="https://robust.email/" target="_blank" rel="noopener noreferrer" aria-label="Robust Email website (opens in a new tab)">
+                <span>ROBUST</span>
+                <svg viewBox="0 0 28 28" width="27" height="27" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 3h24v7H2zM2 14h7v11H2zM13 14h13v11H13z"/></svg>
+                <span class="wordmark-email">EMAIL</span>
+            </a>
+            <div class="product-name">Pre-Send Inspector</div>
+            <span class="header-note">EMAIL QUALITY ASSURANCE</span>
+        </div>
+    </header>
+    <main class="container">
+        <div class="page-heading">
+            <div>
+                <p class="eyebrow">CHECK BEFORE YOU SEND</p>
+                <h1>Email Pre-Send Inspector<span class="teal">.</span></h1>
+                <p class="intro">A clearer view of your email’s quality, before it reaches the inbox.</p>
+            </div>
+            <span class="status-label" id="inspectionState">Awaiting inspection</span>
+        </div>
+        <section class="overview panel" aria-labelledby="overviewTitle">
+            <div class="score-block">
+                <div class="score-gauge" id="scoreGauge">
+                    <svg viewBox="0 0 140 140" aria-hidden="true"><circle class="gauge-track" cx="70" cy="70" r="62"/><circle id="scoreArc" class="gauge-value" cx="70" cy="70" r="62" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/></svg>
+                    <div class="score-number"><strong id="score">—</strong><span>OUT OF 100</span></div>
+                </div>
+                <h2 id="overviewTitle">Overall inspection score</h2>
+                <p>Based on the included checks</p>
+            </div>
+            <div class="overview-body">
+                <div class="overview-description">
+                    <div><p class="eyebrow">INSPECTION OVERVIEW</p><h2 id="scoreTitle">Every detail, accounted for.</h2></div>
+                    <span class="overview-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 3h10v18H4V6h3zM7 3v4h10M8 11h5M8 15h5"/></svg></span>
+                </div>
+                <p id="scoreDescription">Add your subject and email HTML to inspect compatibility, accessibility, security and content.</p>
+                <div class="issue-counts">
+                    <a href="#criticalGroup" class="count-card critical"><span class="count-label"><span class="severity-icon" aria-hidden="true">×</span>Critical issues</span><strong id="criticalCount">—</strong><span class="count-caption">Resolve first <span aria-hidden="true">↗</span></span></a>
+                    <a href="#warningGroup" class="count-card warning"><span class="count-label"><span class="severity-icon" aria-hidden="true">!</span>Warnings</span><strong id="warningCount">—</strong><span class="count-caption">Review before sending <span aria-hidden="true">↗</span></span></a>
+                    <a href="#passedGroup" class="count-card passed"><span class="count-label"><span class="severity-icon" aria-hidden="true">✓</span>Passed checks</span><strong id="passedCount">—</strong><span class="count-caption">Looking good <span aria-hidden="true">↗</span></span></a>
+                </div>
+            </div>
+        </section>
+        <div class="workspace">
+            <section class="editor panel" aria-labelledby="inputTitle">
+                <div class="section-heading"><div><p class="eyebrow">01 / SOURCE</p><h2 id="inputTitle">Your email</h2></div><button id="sampleButton" class="text-button" type="button">Load example</button></div>
+                <form id="inspectionForm">
+                    <label for="subject">Subject line</label>
+                    <input id="subject" name="subject" type="text" placeholder="Enter your email subject" autocomplete="off">
+                    <div class="field-heading"><label for="emailHtml">Email HTML</label><span class="language-label">HTML</span></div>
+                    <textarea id="emailHtml" name="html" placeholder="<!-- Paste your email HTML here -->" spellcheck="false" autocapitalize="off" aria-describedby="sourceHelp"></textarea>
+                    <p id="sourceHelp" class="field-help">Paste the complete HTML of the email you plan to send.</p>
+                    <div class="editor-actions"><button id="analyzeButton" class="primary-button" type="submit"><span>Run inspection</span><span aria-hidden="true">↗</span></button><button id="clearButton" class="text-button clear-button" type="button">Clear</button></div>
+                    <p id="requestError" class="request-error" role="alert" hidden></p>
+                    <p class="editor-note"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V6a4 4 0 0 1 8 0v4"/></svg>Your email is inspected, never sent.</p>
+                </form>
+                <div class="coverage"><p class="eyebrow">WHAT WE INSPECT</p><p>Compatibility <span>·</span> Accessibility <span>·</span> Security<br>Links <span>·</span> Images <span>·</span> Content <span>·</span> HTML size</p></div>
+            </section>
+            <div id="results" class="report-column" aria-busy="false">
+                <section class="findings panel" aria-labelledby="findingsTitle">
+                    <div class="section-heading"><div><p class="eyebrow">02 / FINDINGS</p><h2 id="findingsTitle">Inspection results</h2></div><span class="small-label" id="findingTotal">No report yet</span></div>
+                    <div id="stats" class="stats" hidden><div><strong id="linksStat">0</strong><span>Links</span></div><div><strong id="imagesStat">0</strong><span>Images</span></div><div><strong id="issuesStat">0</strong><span>Total issues</span></div><div><strong id="sizeStat">0 KB</strong><span>HTML size</span></div></div>
+                    <p class="report-intro" id="reportIntro">Run an inspection to see what needs attention and what passes.</p>
+                    <div id="issues" class="issue-groups">
+                        <details class="issue-group critical" id="criticalGroup" open><summary><span class="severity-icon" aria-hidden="true">×</span><h3>Critical Issues</h3><span class="group-count" id="criticalGroupCount">—</span><span class="chevron" aria-hidden="true"></span></summary><div id="criticalList" class="group-list"><p class="empty-group">Critical findings will appear here.</p></div></details>
+                        <details class="issue-group warning" id="warningGroup" open><summary><span class="severity-icon" aria-hidden="true">!</span><h3>Warnings</h3><span class="group-count" id="warningGroupCount">—</span><span class="chevron" aria-hidden="true"></span></summary><div id="warningList" class="group-list"><p class="empty-group">Checks that need a closer look will appear here.</p></div></details>
+                        <details class="issue-group passed" id="passedGroup"><summary><span class="severity-icon" aria-hidden="true">✓</span><h3>Passed Checks</h3><span class="group-count" id="passedGroupCount">—</span><span class="chevron" aria-hidden="true"></span></summary><div id="passedList" class="group-list"><p class="empty-group">Passed checks will appear here.</p></div></details>
+                        <details class="issue-group notes" id="infoGroup" hidden open><summary><span class="severity-icon" aria-hidden="true">i</span><h3>Inspection Notes</h3><span class="group-count" id="infoGroupCount">0</span><span class="chevron" aria-hidden="true"></span></summary><div id="infoList" class="group-list"></div></details>
+                    </div>
+                </section>
+                <section class="recommendations panel" aria-labelledby="recommendationsTitle">
+                    <div class="section-heading"><div><p class="eyebrow">03 / NEXT STEPS</p><h2 id="recommendationsTitle">Recommendations</h2></div><span class="small-label" id="recommendationCount">After inspection</span></div>
+                    <div id="recommendationsList"><p class="recommendations-empty">Your next steps will appear here, with critical issues first.</p></div>
+                </section>
+                <p class="scope-note">An inspection supports your final review. It does not guarantee inbox delivery or identical rendering in every email client.</p>
+            </div>
+        </div>
+        <footer><span>ROBUST EMAIL <span class="footer-divider">/</span> Built for better emails.</span><span>Inspect. Review. Send with confidence.</span></footer>
+        <p id="announcement" class="sr-only" role="status" aria-live="polite"></p>
+    </main>
+</body>
+</html>

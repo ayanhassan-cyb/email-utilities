@@ -1,0 +1,5 @@
+# No Python packages are required by this HTML/CSS/JavaScript application.
+# External runtime: Ollama, installed separately.
+# Required model: qwen2.5:3b (download with: ollama pull qwen2.5:3b).
+# Optional local server: python -m http.server 8000 --bind 127.0.0.1
+# See README.md for setup instructions.

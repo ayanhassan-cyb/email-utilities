@@ -1,0 +1,27 @@
+# Local environments and dependencies
+.venv/
+venv/
+env/
+.runtime/
+node_modules/
+
+# Python caches and build artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+dist/
+build/
+*.egg-info/
+
+# Local configuration and logs
+.env
+.env.*
+!.env.example
+*.log
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
