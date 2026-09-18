@@ -44,9 +44,26 @@ See
 [`email-pre-send-inspector/README.md`](email-pre-send-inspector/README.md)
 for setup and usage instructions.
 
+### 3. Email Signature Generator
+
+A single-page signature builder inspired by Robust Email's visual style.
+Enter your name, designation and contact information, choose a layout,
+and generate an email-friendly HTML signature.
+
+**Key features:**
+
+- Classic, stacked and minimal layouts with a live preview.
+- Contact links, optional photo/logo, pronouns, address and tagline.
+- Accent color, system-font and text-size controls.
+- Copy a formatted signature, copy HTML source, or download an HTML file.
+- Browser-only generation with no backend or application dependencies.
+
+Open [`email-signature-generator/index.html`](email-signature-generator/index.html)
+to use it, or read its [setup and usage guide](email-signature-generator/README.md).
+
 ## Repository Structure
 
-``` text
+```text
 email-utilities/
 ├── README.md
 ├── .gitignore
@@ -54,16 +71,22 @@ email-utilities/
 │   ├── README.md
 │   ├── index.html
 │   └── requirements.txt
-└── email-pre-send-inspector/
+├── email-pre-send-inspector/
+│   ├── README.md
+│   ├── app.py
+│   ├── requirements.txt
+│   ├── run.bat
+│   ├── static/
+│   │   ├── script.js
+│   │   └── style.css
+│   └── templates/
+│       └── index.html
+└── email-signature-generator/
     ├── README.md
-    ├── app.py
-    ├── requirements.txt
-    ├── run.bat
-    ├── static/
-    │   ├── script.js
-    │   └── style.css
-    └── templates/
-        └── index.html
+    ├── index.html
+    ├── style.css
+    ├── script.js
+    └── requirements.txt
 ```
 
 ## Purpose

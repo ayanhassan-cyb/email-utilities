@@ -1,0 +1,3 @@
+# No Python packages are required.
+# This utility uses HTML, CSS and vanilla JavaScript in a web browser.
+# Optional local server: python -m http.server 8000 --bind 127.0.0.1

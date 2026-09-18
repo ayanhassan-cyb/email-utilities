@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8f5">
+  <meta name="description" content="Build a clean, professional email signature. Add your details, choose a layout, and copy email-friendly HTML.">
+  <title>Email Signature Generator — Robust Email</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#signatureForm">Skip to signature builder</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="https://robust.email/" aria-label="Robust Email home"><span>ROBUST</span><svg width="25" height="25" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 3h24v7H2zM2 14h7v11H2zM13 14h13v11H13z"/></svg><span>EMAIL</span></a>
+      <span class="header-divider"></span><span class="tool-name">Signature studio</span>
+      <a href="#install" class="header-link">How to use your signature <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="intro" aria-labelledby="pageTitle">
+      <div><p class="eyebrow">SMALL DETAILS. LASTING IMPRESSIONS.</p><h1 id="pageTitle">A better way to sign off<span>.</span></h1><p class="intro-copy">Your details. Your style. A signature ready for your next email.</p></div>
+      <div class="intro-note"><span class="small-star" aria-hidden="true">✳</span><span>Made for real inboxes.<br><strong>Built with care, by Robust.</strong></span></div>
+    </section>
+
+    <div class="builder">
+      <form id="signatureForm" class="editor" novalidate>
+        <div class="editor-heading"><div><p class="eyebrow">MAKE IT YOURS</p><h2>Your signature details</h2></div><button type="button" class="text-button" id="exampleButton">Use example</button></div>
+        <p class="form-note">Only your name is required. Add what you want to share.</p>
+
+        <fieldset class="fields-section">
+          <legend><span class="section-index">01</span> The essentials</legend>
+          <div class="field-grid">
+            <div class="field"><label for="fullName">Full name <span aria-hidden="true">*</span></label><input id="fullName" name="fullName" autocomplete="name" maxlength="80" required placeholder="Ayan Hassan" aria-describedby="fullNameError"><p class="field-error" id="fullNameError"></p></div>
+            <div class="field"><label for="designation">Designation</label><input id="designation" name="designation" autocomplete="organization-title" maxlength="100" placeholder="Cyber Security Intern"></div>
+            <div class="field"><label for="company">Company</label><input id="company" name="company" autocomplete="organization" maxlength="100" placeholder="NCCS - NED"></div>
+            <div class="field"><label for="pronouns">Pronouns <span class="optional">optional</span></label><input id="pronouns" name="pronouns" maxlength="40" placeholder="he / him"></div>
+          </div>
+        </fieldset>
+
+        <fieldset class="fields-section">
+          <legend><span class="section-index">02</span> Stay connected</legend>
+          <div class="field-grid">
+            <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" maxlength="160" placeholder="ayanh4ss4n@gmail.com" aria-describedby="emailError"><p class="field-error" id="emailError"></p></div>
+            <div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="40" placeholder="+92 340 8653826" aria-describedby="phoneError"><p class="field-error" id="phoneError"></p></div>
+            <div class="field"><label for="website">Website</label><input id="website" name="website" type="text" inputmode="url" autocomplete="url" maxlength="250" placeholder="example.com" aria-describedby="websiteError"><p class="field-error" id="websiteError"></p></div>
+            <div class="field"><label for="linkedin">LinkedIn profile</label><input id="linkedin" name="linkedin" type="text" inputmode="url" maxlength="250" placeholder="linkedin.com/in/ayanhassan-cyb" aria-describedby="linkedinError"><p class="field-error" id="linkedinError"></p></div>
+            <div class="field full"><label for="address">Address or location</label><input id="address" name="address" autocomplete="street-address" maxlength="180" placeholder="City, country"></div>
+          </div>
+        </fieldset>
+
+        <details class="extra-details">
+          <summary><span><span class="section-index">+</span> Photo, logo &amp; sign-off</span><span class="disclosure" aria-hidden="true"></span></summary>
+          <div class="extra-content">
+            <div class="field"><label for="imageUrl">Photo or logo URL</label><input id="imageUrl" name="imageUrl" type="text" inputmode="url" maxlength="1000" placeholder="https://example.com/photo.png" aria-describedby="imageHelp imageUrlError"><p class="field-help" id="imageHelp">Use a public HTTPS link to a square PNG or JPG. Images load from that host when you generate or copy.</p><p class="field-error" id="imageUrlError"></p></div>
+            <div class="field"><label for="imageAlt">Image description</label><input id="imageAlt" name="imageAlt" maxlength="120" placeholder="Your name or company logo"></div>
+            <div class="field"><label for="tagline">Short sign-off or tagline</label><input id="tagline" name="tagline" maxlength="160" placeholder="A short personal tagline"></div>
+          </div>
+        </details>
+
+        <fieldset class="design-section">
+          <legend><span class="section-index">03</span> A little personality</legend>
+          <div class="layout-options">
+            <label class="layout-option"><input type="radio" name="layout" value="classic" checked><span class="layout-card"><span class="mini-signature mini-classic" aria-hidden="true"><i></i><i></i><i></i></span><span>Classic</span></span></label>
+            <label class="layout-option"><input type="radio" name="layout" value="stacked"><span class="layout-card"><span class="mini-signature mini-stacked" aria-hidden="true"><i></i><i></i><i></i></span><span>Stacked</span></span></label>
+            <label class="layout-option"><input type="radio" name="layout" value="minimal"><span class="layout-card"><span class="mini-signature mini-minimal" aria-hidden="true"><i></i><i></i><i></i></span><span>Minimal</span></span></label>
+          </div>
+          <div class="style-options">
+            <div class="field"><label for="accentColor">Accent color</label><div class="color-control"><input type="color" id="accentColor" name="accentColor" value="#087d76" aria-label="Accent color"><span id="colorLabel">#087D76</span></div></div>
+            <div class="field"><label for="font">Typeface</label><select id="font" name="font"><option value="arial">Arial</option><option value="georgia">Georgia</option><option value="verdana">Verdana</option></select></div>
+            <div class="field"><label for="size">Text size</label><select id="size" name="size"><option value="12">Small</option><option value="14" selected>Medium</option><option value="16">Large</option></select></div>
+          </div>
+        </fieldset>
+        <div class="form-actions"><button type="submit" class="button primary" id="generateButton">Generate signature <span aria-hidden="true">↗</span></button><button type="button" class="text-button muted-button" id="resetButton">Clear all</button></div>
+        <p class="privacy-note"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V6a4 4 0 0 1 8 0v4"/></svg> Your details stay in this browser. No account needed.</p>
+      </form>
+
+      <section class="preview-column" aria-labelledby="previewTitle">
+        <div class="preview-heading"><div><p class="eyebrow">THE FINISHING TOUCH</p><h2 id="previewTitle">See it in your next email.</h2></div><span class="preview-state" id="previewState">Example details</span></div>
+        <div class="preview-workspace">
+          <div class="preview-toolbar"><div class="tabs" role="tablist" aria-label="Signature output"><button class="tab" id="previewTab" type="button" role="tab" aria-selected="true" aria-controls="previewPanel">Preview</button><button class="tab" id="htmlTab" type="button" role="tab" aria-selected="false" aria-controls="htmlPanel" tabindex="-1">HTML</button></div><span class="layout-label" id="layoutLabel">CLASSIC LAYOUT</span></div>
+          <div id="previewPanel" role="tabpanel" aria-labelledby="previewTab">
+            <div class="email-window">
+              <div class="email-window-header"><span>New message</span><span class="window-marks" aria-hidden="true">− &nbsp; □ &nbsp; ×</span></div>
+              <div class="email-meta"><span>To</span><span>Your next connection</span></div>
+              <div class="email-meta"><span>Subject</span><span>A good first impression</span></div>
+              <div class="email-body">
+                <p class="email-copy">Hello,</p><p class="email-copy">Here’s to the next great conversation.</p><p class="email-copy regards">Best regards,</p>
+                <div id="signaturePreview" class="signature-preview" tabindex="0" aria-label="Generated signature preview"></div>
+              </div>
+            </div>
+            <p class="preview-caption">Just your signature is copied. The message stays here.</p>
+          </div>
+          <div id="htmlPanel" role="tabpanel" aria-labelledby="htmlTab" hidden><label class="sr-only" for="htmlCode">Generated HTML signature</label><textarea id="htmlCode" readonly spellcheck="false" wrap="off"></textarea><p class="preview-caption"><span id="htmlSize">0 KB</span> · Tables, inline styles and system fonts.</p></div>
+          <div class="export-bar"><button id="copySignature" type="button" class="button primary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V3H3v13h5"/></svg>Copy signature</button><button id="copyHtml" type="button" class="button secondary">Copy HTML</button><button id="downloadHtml" type="button" class="download-button" aria-label="Download HTML signature" title="Download HTML"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 15v6h16v-6"/></svg></button></div>
+          <p id="feedback" class="feedback" role="status" aria-live="polite">Replace the example details, then make it yours.</p>
+          <p id="imageStatus" class="image-status" role="status" hidden></p>
+        </div>
+        <div class="compatibility-note"><span class="note-mark" aria-hidden="true">✓</span><div><h3>Simple by design. Friendly to email.</h3><p>Built with email-friendly tables and inline styles. Paste into Gmail, Outlook or Apple Mail, then send yourself a test.</p></div></div>
+        <details class="install-guide" id="install"><summary>How do I add my signature?<span class="disclosure" aria-hidden="true"></span></summary><div class="install-content"><p>Choose <strong>Copy signature</strong>, then paste into your email client’s signature editor. Use <strong>Copy HTML</strong> when an editor specifically asks for HTML source.</p><ul><li><strong>Gmail:</strong> Settings → See all settings → General → Signature. Create a signature, paste, choose your defaults, and save.</li><li><strong>New Outlook / Outlook on the web:</strong> Settings → Accounts → Signatures. Add a signature, paste, and save.</li><li><strong>Classic Outlook:</strong> New Email → Signature → Signatures. Create a new entry, paste, and save.</li><li><strong>Apple Mail:</strong> Mail → Settings → Signatures. Add a signature to your account. Turn off “Always match my default message font” to retain its formatting, then paste.</li></ul><p class="install-footnote">Pasting, dark mode and image settings vary by client. Hosted images can be blocked until a recipient allows them.</p></div></details>
+      </section>
+    </div>
+    <footer><span>A thoughtful sign-off goes a long way.</span><a href="https://robust.email/">Made for better emails. <strong>ROBUST EMAIL ↗</strong></a></footer>
+    <noscript><p class="noscript-message">Enable JavaScript to generate and copy a signature. All generation happens in your browser.</p></noscript>
+  </main>
+
+  <dialog id="manualCopyDialog" aria-labelledby="manualCopyTitle"><div class="dialog-heading"><h2 id="manualCopyTitle">Copy your signature</h2><button type="button" id="closeDialog" aria-label="Close copy instructions">×</button></div><p id="manualCopyHelp"></p><div id="manualRich" class="manual-rich" tabindex="0"></div><textarea id="manualSource" readonly aria-label="HTML to copy" hidden></textarea><button type="button" class="button secondary" id="selectManual">Select all</button><p class="field-help">Paste the formatted version into your email client’s signature settings.</p></dialog>
+</body>
+</html>
