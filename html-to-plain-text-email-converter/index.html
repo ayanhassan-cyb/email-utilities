@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Convert HTML email into a clean, readable plain-text alternative.">
+  <title>HTML-to-Plain-Text Email Converter — Robust Email</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#htmlInput">Skip to HTML input</a>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="https://robust.email/" aria-label="Robust Email home"><strong>ROBUST</strong><svg width="25" height="25" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 3h24v7H2zM2 14h7v11H2zM13 14h13v11H13z"/></svg><strong>EMAIL</strong></a>
+    <span class="divider"></span><span class="tool-name">Plain-text converter</span>
+    <span class="local-note">RUNS LOCALLY IN YOUR BROWSER</span>
+  </div></header>
+
+  <main class="container">
+    <section class="hero"><p class="eyebrow">THE OTHER HALF OF A GOOD EMAIL</p><h1>HTML in. Plain text out<span>.</span></h1><p>Turn an HTML email into a readable alternative without rewriting it by hand.</p></section>
+
+    <section class="converter" aria-label="Email conversion workspace">
+      <div class="column input-column">
+        <div class="column-heading"><div><p class="step">01 / HTML EMAIL</p><h2>Paste your source</h2></div><button type="button" class="text-button" id="sampleButton">Load example</button></div>
+        <label class="sr-only" for="htmlInput">HTML email source</label>
+        <textarea id="htmlInput" spellcheck="false" placeholder="Paste the complete HTML email here…"></textarea>
+        <div class="source-stats" id="sourceStats"><span>0 characters</span><span>0 links</span><span>0 images</span></div>
+        <fieldset class="options"><legend>Plain-text preferences</legend>
+          <label><input type="checkbox" id="includeLinks" checked><span><strong>Show link destinations</strong><small>Add the URL after linked text when it is different.</small></span></label>
+          <label><input type="checkbox" id="includeImages" checked><span><strong>Include image descriptions</strong><small>Use alt text as <code>[Image: description]</code>.</small></span></label>
+          <label><input type="checkbox" id="uppercaseHeadings"><span><strong>Uppercase headings</strong><small>Give section titles more emphasis in plain text.</small></span></label>
+        </fieldset>
+        <div class="actions"><button type="button" class="button primary" id="convertButton">Convert email <span aria-hidden="true">↗</span></button><button type="button" class="text-button muted" id="clearButton">Clear</button></div>
+        <p class="privacy"><span aria-hidden="true">◇</span> Your email stays in this browser.</p>
+      </div>
+
+      <div class="column output-column">
+        <div class="column-heading"><div><p class="step">02 / PLAIN TEXT</p><h2>Your text alternative</h2></div><span class="status" id="status">Waiting for HTML</span></div>
+        <div class="output-wrap"><label class="sr-only" for="plainOutput">Generated plain text</label><textarea id="plainOutput" readonly placeholder="Your converted email will appear here."></textarea><div class="empty-state" id="emptyState"><span aria-hidden="true">Aa</span><p>A clean text version will appear here.</p></div></div>
+        <div class="output-stats" id="outputStats"><div><strong>0</strong><span>Words</span></div><div><strong>0</strong><span>Characters</span></div><div><strong>0 min</strong><span>Read time</span></div><div><strong>0 B</strong><span>Text size</span></div></div>
+        <div class="export"><button type="button" class="button primary" id="copyButton" disabled>Copy plain text</button><button type="button" class="button secondary" id="downloadButton" disabled>Download .txt</button></div>
+        <p class="feedback" id="feedback" role="status" aria-live="polite">Paste an HTML email or load the example to begin.</p>
+      </div>
+    </section>
+
+    <section class="principles"><article><span>01</span><h3>Readable structure</h3><p>Paragraphs, headings, lists, quotes and table rows retain useful separation.</p></article><article><span>02</span><h3>Useful destinations</h3><p>Linked text can carry its destination into clients that display only plain text.</p></article><article><span>03</span><h3>No hidden code</h3><p>Styles, scripts, comments, tracking pixels and hidden elements are omitted.</p></article></section>
+    <footer><span>Plain text is part of a resilient email.</span><a href="https://robust.email/">ROBUST EMAIL ↗</a></footer>
+  </main>
+</body>
+</html>

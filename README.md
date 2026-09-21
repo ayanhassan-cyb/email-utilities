@@ -61,6 +61,38 @@ and generate an email-friendly HTML signature.
 Open [`email-signature-generator/index.html`](email-signature-generator/index.html)
 to use it, or read its [setup and usage guide](email-signature-generator/README.md).
 
+### 4. HTML-to-Plain-Text Email Converter
+
+A browser-only utility that turns an HTML email into a clean, readable
+plain-text alternative while preserving useful structure.
+
+**Key features:**
+
+- Converts headings, paragraphs, lists, tables and block quotes.
+- Optionally includes link destinations and image alt text.
+- Omits scripts, styles, comments, tracking pixels and hidden elements.
+- Shows word count, character count, reading time and output size.
+- Copies the result or downloads it as a `.txt` file.
+
+Open [`html-to-plain-text-email-converter/index.html`](html-to-plain-text-email-converter/index.html)
+or read its [usage guide](html-to-plain-text-email-converter/README.md).
+
+### 5. Email Link Checker
+
+A local Flask utility that extracts every link from email HTML, reviews
+source-level problems and can test public web destinations.
+
+**Key features:**
+
+- Finds empty, relative, insecure, unsafe and duplicate links.
+- Flags URL shorteners and redirect-style query parameters.
+- Resolves relative destinations using an optional base URL.
+- Checks public HTTP/HTTPS links and reports response codes and redirects.
+- Blocks checks to local, private and reserved network addresses.
+
+See [`email-link-checker/README.md`](email-link-checker/README.md) for setup
+and usage instructions.
+
 ## Repository Structure
 
 ```text
@@ -81,12 +113,28 @@ email-utilities/
 │   │   └── style.css
 │   └── templates/
 │       └── index.html
-└── email-signature-generator/
+├── email-signature-generator/
+│   ├── README.md
+│   ├── index.html
+│   ├── style.css
+│   ├── script.js
+│   └── requirements.txt
+├── html-to-plain-text-email-converter/
+│   ├── README.md
+│   ├── index.html
+│   ├── style.css
+│   ├── script.js
+│   └── requirements.txt
+└── email-link-checker/
     ├── README.md
-    ├── index.html
-    ├── style.css
-    ├── script.js
-    └── requirements.txt
+    ├── app.py
+    ├── requirements.txt
+    ├── run.bat
+    ├── static/
+    │   ├── script.js
+    │   └── style.css
+    └── templates/
+        └── index.html
 ```
 
 ## Purpose
@@ -109,8 +157,8 @@ corresponding project directory and follow its `README.md`.
 
 For the AI-powered grammar checker, a locally running Ollama
 installation and compatible local model are required. The Pre-Send
-Inspector uses its own Python dependencies as documented in its project
-folder.
+Inspector and Email Link Checker use their own Python dependencies as documented
+in their project folders. The converter runs directly in a browser.
 
 ## Technologies
 
